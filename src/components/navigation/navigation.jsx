@@ -3,8 +3,8 @@ import Button from '@material-ui/core/Button';
 import { Switch, Link, Route } from 'react-router-dom';
 
 import FrontPage from "../../sites/FrontPage/FrontPage.jsx";
-import coctailoverview from "../../sites/OverviewCocktails/OverviewCocktails.jsx";
-import RecipeView from "../../sites/SingleViewCocktails/SingleViewCocktails.jsx";
+import overviewcocktails from "../../sites/OverviewCocktails/OverviewCocktails.jsx";
+import singleviewcocktails from "../../sites/SingleViewCocktails/SingleViewCocktails.jsx";
 
 export function navigation(siteToLoad) {
 
@@ -39,9 +39,15 @@ export function navigation(siteToLoad) {
 
                 <Route path="/zutatenauswahl" component={FrontPage} />
 
-                <Route path="/übersichtcocktails" component={OverviewCocktails} />
+                <Route path="/übersichtcocktails" component={overviewcocktails} />
 
-                <Route path="/cocktail" component={SingleViewCocktails} />
+                <Route path="/cocktail" component={singleviewcocktails} />
+
+                <Route path="/Cuba_Libre" component={singleviewcocktails} />
+
+                <Route path="/Caipirinha" component={singleviewcocktails} />
+
+                <Route path="/Mojito" component={singleviewcocktails} />
 
             </Switch>
         </div>
