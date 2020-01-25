@@ -6,7 +6,13 @@ import FrontPage from "../../sites/FrontPage/FrontPage.jsx";
 import overviewcocktails from "../../sites/OverviewCocktails/OverviewCocktails.jsx";
 import singleviewcocktails from "../../sites/SingleViewCocktails/SingleViewCocktails.jsx";
 
-export function navigation(siteToLoad) {
+export function navigation(probs) {
+
+
+    let cocktails = probs.cocktails
+    let cubalibre = {name: cocktails[0]}
+    let caipirinha = {name: cocktails[1]}
+    let mojito = {name: cocktails[2]}
 
     return (
         <div id="NavigationArea">
@@ -14,7 +20,7 @@ export function navigation(siteToLoad) {
             <nav>
                 <Link to="/zutatenauswahl">
                     <Button id="ingredientsselection" variant="contained" color="default" size="large" >
-                        ZutatenAuswahl
+                        Zutaten Auswahl
                     </Button>
                 </Link>
 
@@ -22,7 +28,7 @@ export function navigation(siteToLoad) {
 
                 <Link to="/übersichtcocktails">
                     <Button id="OverviewCocktails" variant="contained" color="default" size="large">
-                        ÜbersichtCocktails
+                        Übersicht Cocktails
                     </Button>
                 </Link>
 
@@ -41,13 +47,13 @@ export function navigation(siteToLoad) {
 
                 <Route path="/übersichtcocktails" component={overviewcocktails} />
 
-                <Route path="/cocktail" component={singleviewcocktails} />
+                <Route path="/cocktail" render={() => <singleviewcocktails {...cubalibre} />} />
 
-                <Route path="/Cuba_Libre" component={singleviewcocktails} />
+                <Route path="/Cuba_Libre" render={() => <singleviewcocktails {...cubalibre} />} />
 
-                <Route path="/Caipirinha" component={singleviewcocktails} />
+                <Route path="/Caipirinha" render={() => <singleviewcocktails {...caipirinha} />} />
 
-                <Route path="/Mojito" component={singleviewcocktails} />
+                <Route path="/Mojito" render={() => <singleviewcocktails {...mojito} />} />
 
             </Switch>
         </div>

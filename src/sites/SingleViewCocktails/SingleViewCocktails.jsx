@@ -3,8 +3,9 @@ import { cocktail } from "../../components/cocktailviews/cocktail/cocktail.jsx";
 
 class SingleViewCocktails extends React.Component {
 
-    state = {
-        cocktail: { name: "Cuba Libre", ingredients: ["Rum", "Cola"], recipe: ["Rum rein", "Cola rein"], Beschreibung: "Man kann Zitronen- oder Limettenscheiben noch hinzufügen" }
+    constructor(probs) {
+        super(probs)
+        this.state = probs
     }
     render() {
 

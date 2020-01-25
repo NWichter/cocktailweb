@@ -5,7 +5,7 @@ export function cocktail(probs) {
 
     let ingredients = []
     let recipe = []
-    probs.Zutaten.map((element) =>
+    probs.ingredients.map((element) =>
         ingredients.push(
             <tr>
                 <td>
