@@ -8,8 +8,13 @@ import singleviewcocktails from "../../sites/SingleViewCocktails/SingleViewCockt
 
 export function navigation(probs) {
 
+    console.log("navprobs", probs.ingredients)
 
     let cocktails = probs.cocktails
+    let ingredients = { ingredients: probs.ingredients }
+
+    console.log("ingredients", ingredients)
+    
     let cubalibre = {name: cocktails[0]}
     let caipirinha = {name: cocktails[1]}
     let mojito = {name: cocktails[2]}
@@ -26,7 +31,7 @@ export function navigation(probs) {
 
                 <br />
 
-                <Link to="/übersichtcocktails">
+                <Link to="/uebersichtcocktails">
                     <Button id="OverviewCocktails" variant="contained" color="default" size="large">
                         Übersicht Cocktails
                     </Button>
@@ -43,9 +48,9 @@ export function navigation(probs) {
 
             <Switch>
 
-                <Route path="/zutatenauswahl" component={FrontPage} />
+                <Route path="/zutatenauswahl" render={() => <FrontPage {...ingredients} />} />
 
-                <Route path="/übersichtcocktails" component={overviewcocktails} />
+                <Route path="/uebersichtcocktails" component={overviewcocktails} />
 
                 <Route path="/cocktail" render={() => <singleviewcocktails {...cubalibre} />} />
 

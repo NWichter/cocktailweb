@@ -9,7 +9,7 @@ export function cocktailviews(probs) {
         ingredients.push(
             <tr id={element.cocktail} >
                 <Link to={element.cocktail}>
-                    <Button /*onClick = {handleclick(element)}*/>
+                    <Button>
                         <td>
                             Bild des Cocktails
                         </td>
