@@ -3,29 +3,30 @@ import Button from '@material-ui/core/Button';
 import { Switch, Link, Route } from 'react-router-dom';
 
 import FrontPage from "../../sites/FrontPage/FrontPage.jsx";
-import overviewcocktails from "../../sites/OverviewCocktails/OverviewCocktails.jsx";
-import singleviewcocktails from "../../sites/SingleViewCocktails/SingleViewCocktails.jsx";
+import OverviewCocktails from "../../sites/OverviewCocktails/OverviewCocktails.jsx";
+import SingleviewCocktails from "../../sites/SingleViewCocktails/SingleViewCocktails.jsx";
+
+// Importieren des css-file
+import './navigation.css';
 
 export function navigation(probs) {
 
-    console.log("navprobs", probs.ingredients)
-
+    // Laden aller Cocktails
     let cocktails = probs.cocktails
-    let ingredients = { ingredients: probs.ingredients }
-
-    console.log("ingredients", ingredients)
     
+    //Jeder Cocktail bekommt eine eigene Variable
     let cubalibre = {name: cocktails[0]}
     let caipirinha = {name: cocktails[1]}
     let mojito = {name: cocktails[2]}
 
+    // Anlegen der Navigationsleiste
     return (
         <div id="NavigationArea">
 
             <nav>
                 <Link to="/zutatenauswahl">
                     <Button id="ingredientsselection" variant="contained" color="default" size="large" >
-                        Zutaten Auswahl
+                        Hauptseite
                     </Button>
                 </Link>
 
@@ -41,24 +42,26 @@ export function navigation(probs) {
 
                 <Link to="/cocktail">
                     <Button id="SingleViewCocktails" variant="contained" color="default" size="large">
-                        Cocktail
+                        Einzelübersicht Cocktail 
                     </Button>
                 </Link>
             </nav>
 
+            {/* Pfadzuweisung der verschiedenen Cocktails und übergeben der jewiligen Variabeln*/}
+
             <Switch>
 
-                <Route path="/zutatenauswahl" render={() => <FrontPage {...ingredients} />} />
+                <Route path="/zutatenauswahl" render={() => <FrontPage {...probs} />} />
 
-                <Route path="/uebersichtcocktails" component={overviewcocktails} />
+                <Route path="/uebersichtcocktails" render={() => <OverviewCocktails {...probs} />} />
 
-                <Route path="/cocktail" render={() => <singleviewcocktails {...cubalibre} />} />
+                <Route path="/cocktail" render={() => <SingleviewCocktails {...cubalibre} />} />
 
-                <Route path="/Cuba_Libre" render={() => <singleviewcocktails {...cubalibre} />} />
+                <Route path="/Cuba_Libre" render={() => <SingleviewCocktails {...cubalibre} />} />
 
-                <Route path="/Caipirinha" render={() => <singleviewcocktails {...caipirinha} />} />
+                <Route path="/Caipirinha" render={() => <SingleviewCocktails {...caipirinha} />} />
 
-                <Route path="/Mojito" render={() => <singleviewcocktails {...mojito} />} />
+                <Route path="/Mojito" render={() => <SingleviewCocktails {...mojito} />} />
 
             </Switch>
         </div>

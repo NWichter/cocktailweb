@@ -1,11 +1,13 @@
 import React from 'react';
 import { Checkbox } from '@material-ui/core';
 
+import './ingredientsselection.css';
+
 export function ingredientsselection(probs) {
 
     const handleChange = (event) => {
         update_ingredient_list(event)
-        console.log(selected_ingredients)
+
     };
 
     const update_ingredient_list = (event) => {
