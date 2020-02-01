@@ -4,7 +4,7 @@ import { Switch, Link, Route } from 'react-router-dom';
 
 import FrontPage from "../../sites/FrontPage/FrontPage.jsx";
 import OverviewCocktails from "../../sites/OverviewCocktails/OverviewCocktails.jsx";
-import SingleviewCocktails from "../../sites/SingleViewCocktails/SingleViewCocktails.jsx";
+import SingleViewCocktails from "../../sites/SingleViewCocktails/SingleViewCocktails.jsx";
 
 // Importieren des css-file
 import './navigation.css';
@@ -25,7 +25,7 @@ export function navigation(probs) {
 
             <nav>
                 <Link to="/zutatenauswahl">
-                    <Button id="ingredientsselection" variant="contained" color="default" size="large" >
+                    <Button id="ingredientsselection" variant="contained" color="red" size="large" >
                         Hauptseite
                     </Button>
                 </Link>
@@ -33,7 +33,7 @@ export function navigation(probs) {
                 <br />
 
                 <Link to="/uebersichtcocktails">
-                    <Button id="OverviewCocktails" variant="contained" color="default" size="large">
+                    <Button id="OverviewCocktails" variant="contained" color="blue" size="large">
                         Übersicht Cocktails
                     </Button>
                 </Link>
@@ -41,13 +41,13 @@ export function navigation(probs) {
                 <br />
 
                 <Link to="/cocktail">
-                    <Button id="SingleViewCocktails" variant="contained" color="default" size="large">
+                    <Button id="SingleViewCocktails" variant="contained" color="green" size="large">
                         Einzelübersicht Cocktail 
                     </Button>
                 </Link>
             </nav>
 
-            {/* Pfadzuweisung der verschiedenen Cocktails und übergeben der jewiligen Variabeln*/}
+            {/* Pfadzuweisung der verschiedenen Cocktails und übergeben der jeweiligen Variabeln*/}
 
             <Switch>
 
@@ -55,13 +55,13 @@ export function navigation(probs) {
 
                 <Route path="/uebersichtcocktails" render={() => <OverviewCocktails {...probs} />} />
 
-                <Route path="/cocktail" render={() => <SingleviewCocktails {...cubalibre} />} />
+                <Route path="/cocktail" render={() => <SingleViewCocktails {...cubalibre} />} />
 
-                <Route path="/Cuba_Libre" render={() => <SingleviewCocktails {...cubalibre} />} />
+                <Route path="/Cuba_Libre" render={() => <SingleViewCocktails {...cubalibre} />} />
 
-                <Route path="/Caipirinha" render={() => <SingleviewCocktails {...caipirinha} />} />
+                <Route path="/Caipirinha" render={() => <SingleViewCocktails {...caipirinha} />} />
 
-                <Route path="/Mojito" render={() => <SingleviewCocktails {...mojito} />} />
+                <Route path="/Mojito" render={() => <SingleViewCocktails {...mojito} />} />
 
             </Switch>
         </div>

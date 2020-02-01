@@ -7,15 +7,14 @@ export function ingredientsselection(probs) {
 
     const handleChange = (event) => {
         update_ingredient_list(event)
-
     };
 
     const update_ingredient_list = (event) => {
-
+        let selected_ingredients = []
         let index = selected_ingredients.findIndex(x => x.key === event.target.id)
 
         if (index === -1) {
-            selected_ingredients.push({ key: event.target.id, value: event.target.checked })
+            probs.push({ key: event.target.id, value: event.target.checked })
         }
         else {
             let status = selected_ingredients[index].value
@@ -24,9 +23,8 @@ export function ingredientsselection(probs) {
             selected_ingredients[index].value = rstatus
         }
     }
-
-    let selected_ingredients = []
-
+    
+    console.log(probs)
     let ingredients = []
     probs.map((element) =>
         ingredients.push(

@@ -3,10 +3,16 @@ import Button from '@material-ui/core/Button';
 import { Checkbox } from '@material-ui/core';
 import { ingredientsselection } from '../../components/ingredientsselection/ingredientsselection';
 
-class FrontPage extends React.Component {
+// Importieren der css-file
+import './FrontPage.css';
 
-    state = {
-        ingredients: [{ name: "Rum", selected: false }, { name: "Cola", selected: false }, { name: "Zitrone", selected: false }]
+class FrontPage extends React.Component {
+    constructor(probs) {
+        super(probs)
+        this.state = {
+            ingredients: probs.ingredients,
+            cocktails: probs.cocktails
+        }
     }
 
     render() {
@@ -14,12 +20,18 @@ class FrontPage extends React.Component {
         return (
             <div id="ingredientsselectionFP" >
 
+                <h1
+                    id = "HeaderFP">
+                    Welche Zutaten sind vorhanden:
+                    
+                </h1>
+
                 {ingredientsselection(this.state.ingredients)}
 
                 <hr 
                     style={{
-                        color: "green",
-                        backgroundColor: "green",
+                        color: "red",
+                        backgroundColor: "red",
                         height: 5
                     }}>
                 </hr>

@@ -12,12 +12,15 @@ class App extends React.Component {
         { name: "Mojito", ingredients: ["Rum", "Limettensaft", "Minearalwasser", "Minzblätter"], recipe: ["Rum rein", "2cl Limettensaft", "paar Minzblätter hinzufügen"], Beschreibung: "schmeckt sehr nach Minze" }
 
       ],
-      ingredients:
-      [
-        { name: "Rum", selected: false },
-        { name: "Cola", selected: false }, 
-        { name: "Zitrone", selected: false }
-      ]
+    ingredients: [
+      { name: "Rum", selected: false },
+      { name: "Cola", selected: false },
+      { name: "Rohrzucker", selected: false },
+      { name: "Limette", selected: false },
+      { name: "Limettensaft", selected: false },
+      { name: "Minearalwasser", selected: false },
+      { name: "Minzblätter", selected: false },
+    ],
   
   }
   render() {
