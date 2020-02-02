@@ -18,9 +18,9 @@ class FrontPage extends React.Component {
     render() {
 
         return (
-            <div id="ingredientsselectionFP" >
+            <div id="FrontPageHeader" >
 
-                <h1
+                <h1 style={{ backgroundColor: "lightgrey" }}
                     id = "HeaderFP">
                     Welche Zutaten sind vorhanden:
                     
@@ -28,28 +28,14 @@ class FrontPage extends React.Component {
 
                 {ingredientsselection(this.state.ingredients)}
 
-                <hr 
-                    style={{
-                        color: "red",
-                        backgroundColor: "red",
-                        height: 5
-                    }}>
-                </hr>
-
-                <p>
+                <p >
+                    
                     Cocktails ohne passende Zutaten anzeigen
-                    <Checkbox value="uncontrolled" inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} />
+                    <Checkbox id="allcocktails" value="uncontrolled" inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} />
                 </p>
 
-                <hr 
-                    style={{
-                        color: "red",
-                        backgroundColor: "red",
-                        height: 5
-                    }}>
-                </hr>
 
-                <Button>
+                <Button id="cocktailsfiltern">
                     Cocktails filtern
                 </Button>
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { Checkbox } from '@material-ui/core';
 
 import './ingredientsselection.css';
+import { Redirect } from 'react-router-dom';
 
 export function ingredientsselection(probs) {
 
@@ -28,12 +29,15 @@ export function ingredientsselection(probs) {
     let ingredients = []
     probs.map((element) =>
         ingredients.push(
-            <tr id={element.Zutat} >
-                <td>
-                    {element.Zutat}
+            <tr id={element.name} style={{ backgroundColor: "lime" }} >
+                <td >
+                    <h3>
+                    {element.name}    
+                    </h3>
+                    
                 </td>
                 <td>
-                    <Checkbox id={element.Zutat}
+                    <Checkbox id={element.name}
                         value="unchecked"
                         inputProps={{ 'aria-label': 'uncontrolled-checkbox' }}
                         onChange={handleChange}

@@ -1,18 +1,15 @@
-#FrontPagechooseingredients {
-    padding: 20px 0;
-    border: 1px solid;
-    text-align: center;
+#FrontPageHeader {
+    padding: 15px;
     width: 400px;
-    margin: auto
 }
-
-#FrontPageHead {
-    margin: auto;
-    width: 20;
-    color: blue;
-    text-align: center;
+#allcocktails {
+    padding: 15px;
+    background-color: "blue"
 }
-
-#fehlendezutaten {
-    color: blue;
+#Cocktailfiltern {
+    padding: 15px;
+    background-color: "red"
+}
+#HeaderFP {
+    padding: 15px;
 }

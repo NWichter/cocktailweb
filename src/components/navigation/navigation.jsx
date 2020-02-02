@@ -22,29 +22,34 @@ export function navigation(probs) {
     // Anlegen der Navigationsleiste
     return (
         <div id="NavigationArea">
-
-            <nav>
+            <h1     
+                    id = "HeaderN"
+                    style={{ backgroundColor: "lightblue" }}>
+                    Willkommen beim Cocktailkombinator
+                    
+            </h1>
+            <nav> 
                 <Link to="/zutatenauswahl">
-                    <Button id="ingredientsselection" variant="contained" color="red" size="large" >
+                    <Button  id="ingredientsselection" style={{ backgroundColor: "lightblue" }} variant="contained" color="red" size="large" >
                         Hauptseite
                     </Button>
                 </Link>
 
-                <br />
+                {/* <br /> */}
 
                 <Link to="/uebersichtcocktails">
-                    <Button id="OverviewCocktails" variant="contained" color="blue" size="large">
+                    <Button id="OverviewCocktails" style={{ backgroundColor: "lightblue" }} variant="contained" color="blue" size="large">
                         Übersicht Cocktails
                     </Button>
                 </Link>
 
                 <br />
 
-                <Link to="/cocktail">
-                    <Button id="SingleViewCocktails" variant="contained" color="green" size="large">
+                {/* <Link to="/cocktail">
+                    <Button id="SingleViewCocktails" style={{ backgroundColor: "lightblue" }} variant="contained" color="green" size="large">
                         Einzelübersicht Cocktail 
                     </Button>
-                </Link>
+                </Link> */}
             </nav>
 
             {/* Pfadzuweisung der verschiedenen Cocktails und übergeben der jeweiligen Variabeln*/}
@@ -55,7 +60,7 @@ export function navigation(probs) {
 
                 <Route path="/uebersichtcocktails" render={() => <OverviewCocktails {...probs} />} />
 
-                <Route path="/cocktail" render={() => <SingleViewCocktails {...cubalibre} />} />
+                <Route path="/cocktail" render={() => <SingleViewCocktails {...probs} />} />
 
                 <Route path="/Cuba_Libre" render={() => <SingleViewCocktails {...cubalibre} />} />
 

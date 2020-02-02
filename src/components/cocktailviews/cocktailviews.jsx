@@ -7,14 +7,14 @@ export function cocktailviews(probs) {
     let ingredients = []
     probs.map((element) =>
         ingredients.push(
-            <tr id={element.cocktail} >
-                <Link to={element.cocktail}>
+            <tr id={element.name} >
+                <Link to={element.name}>
                     <Button>
                         <td>
-                            Bild des Cocktails
+                            <img src={element.img} />
                         </td>
                         <td>
-                            {element.cocktail}
+                            {element.name}
                         </td>
                         <td>
                             {element.description}
