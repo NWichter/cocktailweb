@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import { Switch, Link, Route } from 'react-router-dom';
 
-import FrontPage from "../../sites/FrontPage/FrontPage.jsx";
+import MainPage from "../../sites/MainPage/MainPage.jsx";
 import OverviewCocktails from "../../sites/OverviewCocktails/OverviewCocktails.jsx";
 import SingleViewCocktails from "../../sites/SingleViewCocktails/SingleViewCocktails.jsx";
 
@@ -48,7 +48,7 @@ export function navigation(probs) {
 
             <Switch>
 
-                <Route path="/zutatenauswahl" render={() => <FrontPage {...probs} />} />
+                <Route path="/zutatenauswahl" render={() => <MainPage {...probs} />} />
 
                 <Route path="/uebersichtcocktails" render={() => <OverviewCocktails {...probs} />} />
 

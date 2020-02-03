@@ -4,9 +4,9 @@ import { Checkbox } from '@material-ui/core';
 import { ingredientsselection } from '../../components/IngredientsSelection/IngredientsSelection';
 
 // Importieren der css-file
-import './FrontPage.css';
+import './MainPage.css';
 
-class FrontPage extends React.Component {
+class MainPage extends React.Component {
     constructor(probs) {
         super(probs)
         this.state = {
@@ -26,9 +26,9 @@ class FrontPage extends React.Component {
     render() {
 
         return (
-            <div id="FrontPageHeader" >
+            <div id="MainPageHeader" >
 
-                <h1 id = "HeaderFP"
+                <h1 id = "HeaderMP"
                     style={{ backgroundColor: "lightgrey" }}>
                     Welche Zutaten sind vorhanden:
                 </h1>
@@ -57,4 +57,4 @@ class FrontPage extends React.Component {
 }
 
 
-export default FrontPage; 
+export default MainPage; 

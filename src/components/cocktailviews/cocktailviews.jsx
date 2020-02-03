@@ -14,6 +14,7 @@ export function cocktailviews(cocktails) {
     Object.values(cocktails).forEach(element => {
         let image = require('../../images/' + element.img + '.jpg');
         let cocktailname = element.name
+        
         content.push(
             <table id="cocktailviewstable">
                 <ListItem //button alignItems="flex-start" component={Link} to={'/cocktail'} onClick={() => { props.aktiv(element.id) }}
