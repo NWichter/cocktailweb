@@ -29,7 +29,7 @@ class App extends React.Component {
     allcocktails: {
       "status": false
     },
-    chooseIngredients:[],
+    selectedIngredients:[],
     choosencocktail:0,
   }
   render() {
@@ -37,7 +37,7 @@ class App extends React.Component {
     return (
 
       <BrowserRouter>
-        <div>
+        <div className="App">
           {navigation(this.state)}
         </div>
       </BrowserRouter>

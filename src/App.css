@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.Frame {
+/* .Frame {
   display: block;
   margin:  10px auto;
   border: 1px solid #ccc;
@@ -12,11 +12,10 @@
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.8);
 
-
-}
+} */
 
 body {
-  background: url("./images/bg.jpg") top center fixed;
+  background: url("./images/background.jpg") top center fixed;
   background-size: cover;
 
 }
