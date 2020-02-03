@@ -11,13 +11,14 @@ class FrontPage extends React.Component {
         super(probs)
         this.state = {
             ingredients: probs.ingredients,
-            cocktails: probs.cocktails
+            cocktails: probs.cocktails,
+            allcocktails: probs.allcocktails
+
         }
-    
     }
         //Diese Funktion dreht den Status der allcocktails-Variable um, wenn alle Cocktails angezeigt werden sollen
         AllCocktailsChange = () => {
-            let status = this.state.ingredients.allcocktails["status"];
+            let status = this.state.allcocktails["status"];
             status = !status;
             this.setState(status)
         }
@@ -27,25 +28,26 @@ class FrontPage extends React.Component {
         return (
             <div id="FrontPageHeader" >
 
-                <h1 style={{ backgroundColor: "lightgrey" }}
-                    id = "HeaderFP">
+                <h1 id = "HeaderFP"
+                    style={{ backgroundColor: "lightgrey" }}>
                     Welche Zutaten sind vorhanden:
-                    
                 </h1>
 
                 {ingredientsselection(this.state)}
 
-                <p >
-                    
+                <p > 
                     Cocktails ohne passende Zutaten anzeigen
-                    <Checkbox id="allcocktails"
-                            value="uncontrolled"
-                            inputProps={{ 'aria-label': 'uncontrolled-checkbox' }}
-                            onChange={this.AllCocktailsChange} />
+                    <Checkbox id="allcocktails"    
+                    value="uncontrolled"
+                    inputProps={{ 'aria-label': 'uncontrolled-checkbox' }}
+                    onChange={this.AllCocktailsChange} />
                 </p>
 
 
-                <Button id="cocktailsfiltern">
+                <Button id="cocktailsfiltern"
+                    style={{backgroundColor:"red"}}
+                    // onClick= {} 
+                    >
                     Cocktails filtern
                 </Button>
 

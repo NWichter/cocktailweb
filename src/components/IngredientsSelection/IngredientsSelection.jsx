@@ -17,11 +17,11 @@ export function ingredientsselection(probs) {
         }
     };
     
-    // zeigt alle Zutaten mit ihrer Checkbox an 
+    // zeigt alle Zutaten mit ihrer jewiligen Checkbox an 
     let ingredients = []
         probs.ingredients.map((ingredient) =>
         ingredients.push(
-            <tr id={ingredient.name} style={{ backgroundColor: "lime" }} >
+            <tr id="ingredientsselectionbody" style={{ backgroundColor: "red" }} >
                 <td >
                     <h3>
                         {ingredient.name}    

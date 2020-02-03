@@ -1,15 +1,9 @@
 #FrontPageHeader {
     padding: 15px;
-    width: 400px;
+    width: 400px; 
 }
-#allcocktails {
-    padding: 15px;
-    background-color: "blue"
-}
-#Cocktailfiltern {
-    padding: 15px;
-    background-color: "red"
-}
+
 #HeaderFP {
     padding: 15px;
+    color: "lightgrey";
 }

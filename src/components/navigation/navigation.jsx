@@ -11,26 +11,18 @@ import './navigation.css';
 
 export function navigation(probs) {
 
-    // Laden aller Cocktails
-    let cocktails = probs.cocktails
-    
-    //Jeder Cocktail bekommt eine eigene Variable
-    let cubalibre = {name: cocktails[0]}
-    let caipirinha = {name: cocktails[1]}
-    let mojito = {name: cocktails[2]}
-
     // Anlegen der Navigationsleiste
     return (
         <div id="NavigationArea">
             <h1     
                     id = "HeaderN"
-                    style={{ backgroundColor: "lightblue" }}>
+                    style={{ backgroundColor: "white" }}>
                     Willkommen beim Cocktailkombinator
                     
             </h1>
             <nav> 
                 <Link to="/zutatenauswahl">
-                    <Button  id="ingredientsselection" style={{ backgroundColor: "lightblue" }} variant="contained" color="red" size="large" >
+                    <Button  id="ingredientsselection" style={{ backgroundColor: "lightblue" }} variant="contained" size="large" >
                         Hauptseite
                     </Button>
                 </Link>
@@ -38,18 +30,18 @@ export function navigation(probs) {
                 {/* <br /> */}
 
                 <Link to="/uebersichtcocktails">
-                    <Button id="OverviewCocktails" style={{ backgroundColor: "lightblue" }} variant="contained" color="blue" size="large">
+                    <Button id="OverviewCocktails" style={{ backgroundColor: "lightblue" }} variant="contained" size="large">
                         Übersicht Cocktails
                     </Button>
                 </Link>
 
-                <br />
+                {/* <br /> */}
 
-                {/* <Link to="/cocktail">
-                    <Button id="SingleViewCocktails" style={{ backgroundColor: "lightblue" }} variant="contained" color="green" size="large">
+                <Link to="/cocktail">
+                    <Button id="SingleViewCocktails" style={{ backgroundColor: "lightblue" }} variant="contained" size="large">
                         Einzelübersicht Cocktail 
                     </Button>
-                </Link> */}
+                </Link>
             </nav>
 
             {/* Pfadzuweisung der verschiedenen Cocktails und übergeben der jeweiligen Variabeln*/}
@@ -61,12 +53,6 @@ export function navigation(probs) {
                 <Route path="/uebersichtcocktails" render={() => <OverviewCocktails {...probs} />} />
 
                 <Route path="/cocktail" render={() => <SingleViewCocktails {...probs} />} />
-
-                <Route path="/Cuba_Libre" render={() => <SingleViewCocktails {...cubalibre} />} />
-
-                <Route path="/Caipirinha" render={() => <SingleViewCocktails {...caipirinha} />} />
-
-                <Route path="/Mojito" render={() => <SingleViewCocktails {...mojito} />} />
 
             </Switch>
         </div>
