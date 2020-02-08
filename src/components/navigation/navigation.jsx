@@ -1,15 +1,16 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import { Switch, Link, Route } from 'react-router-dom';
+import { Switch, Link, Route, Redirect } from 'react-router-dom';
+
 
 import MainPage from "../../sites/MainPage/MainPage.jsx";
 import OverviewCocktails from "../../sites/OverviewCocktails/OverviewCocktails.jsx";
 import SingleViewCocktails from "../../sites/SingleViewCocktails/SingleViewCocktails.jsx";
 
-// Importieren des css-file
+// Importieren der css-file
 import './navigation.css';
 
-export function navigation(probs) {
+export function navigation(props) {
 
     // Anlegen der Navigationsleiste
     return (
@@ -21,7 +22,7 @@ export function navigation(probs) {
                     
             </h1>
             <nav> 
-                <Link to="/zutatenauswahl">
+                <Link to="/home">
                     <Button  id="ingredientsselection" style={{ backgroundColor: "lightblue" }} variant="contained" size="large" >
                         Hauptseite
                     </Button>
@@ -44,15 +45,19 @@ export function navigation(probs) {
                 </Link>
             </nav>
 
-            {/* Pfadzuweisung der verschiedenen Cocktails und übergeben der jeweiligen Variabeln*/}
+            {/* Pfadzuweisung der verschiedenen Cocktails und übergeben von props*/}
 
             <Switch>
 
-                <Route path="/zutatenauswahl" render={() => <MainPage {...probs} />} />
+                <Route path="/" exact >
+                    <Redirect to="/home" />
+                    </Route> 
 
-                <Route path="/uebersichtcocktails" render={() => <OverviewCocktails {...probs} />} />
+                <Route path="/home" render={() => <MainPage {...props} />} />
 
-                <Route path="/cocktail" render={() => <SingleViewCocktails {...probs} />} />
+                <Route path="/uebersichtcocktails" render={() => <OverviewCocktails {...props} />} />
+
+                <Route path="/cocktail" render={() => <SingleViewCocktails {...props} />} />
 
             </Switch>
         </div>

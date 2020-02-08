@@ -1,12 +1,27 @@
 import React from "react";
-import { Checkbox } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 
-export function cocktail(probs) {
+//Funktion um den nächsten Cocktail aufzurufen
 
-    let Zutaten = []
-    let recipe = []
-    probs.ingredients.map((element) =>
-        Zutaten.push(
+
+export function cocktail(props) {
+    
+    let nextcocktail = (props) => {
+
+    if (props.choosencocktail >= (props.cocktails.length - 1)) {
+        props.choosencocktail = 0
+    } else {
+        props.choosencocktail += 1
+    }
+    cocktail(props)
+}
+    let cocktails = props.cocktails
+    let choosencocktail = props.choosencocktail
+       
+    //Zusammenfassen aller Zutaten
+    let ingredients = []    
+    cocktails[choosencocktail].ingredients.map((element) =>
+        ingredients.push(
             <tr>
                 <td>
                     {element}
@@ -14,19 +29,13 @@ export function cocktail(probs) {
             </tr>
         )
     )
-
-    probs.Rezept.map((element) =>
+    
+    let recipe = []
+    cocktails[choosencocktail].recipe.map((element) =>
         recipe.push(
             <tr>
                 <td>
                     {element}
-                </td>
-                <td>
-                <Checkbox
-                        value="uncontrolled"
-                        inputProps={{ 'aria-label': 'uncontrolled-checkbox' }}
-                        id={element}
-                        />
                 </td>
             </tr>
         )
@@ -38,19 +47,38 @@ export function cocktail(probs) {
                 <tbody>
                     <tr>
                         <td>
-                            {probs.name}
+                            <h2>
+                               Cocktailname: 
+                            </h2>
+                            {cocktails[choosencocktail].name}
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            {Zutaten}
+                            <h2>
+                               Zutaten: 
+                            </h2>
+                            {ingredients}
                         </td>
                     </tr>
                     <tr>
                         <td>
+                            <h2>
+                                Zubereitungsschritte:
+                            </h2>
                             {recipe}
                         </td>
                     </tr>
+                    <tr>
+                        <td>    
+                                <Button id="nextcocktail"
+                                style={{ backgroundColor: "red" }}
+                                onClick={()=>{nextcocktail(props)}}>
+                                Nächster Cocktail
+                                </Button>
+                        </td>
+                    </tr>
+
                 </tbody>
             </table>
         </div>

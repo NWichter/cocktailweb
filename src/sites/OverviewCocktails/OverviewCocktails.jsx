@@ -3,10 +3,10 @@ import { cocktailviews } from "../../components/cocktailviews/cocktailviews.jsx"
 
 class OverviewCocktails extends React.Component {
 
-    constructor(probs) {
-        super(probs)
+    constructor(props) {
+        super(props)
         this.state = {
-            cocktails: probs.cocktails
+            cocktails: props.cocktails
         }
     }
 

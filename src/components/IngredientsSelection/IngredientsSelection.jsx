@@ -4,22 +4,20 @@ import { Checkbox } from '@material-ui/core';
 import './IngredientsSelection.css';
 //import { Redirect } from 'react-router-dom';
 
-export function ingredientsselection(probs) {
+export function ingredientsselection(props) {
 
-    //Diese Funktion erfasst den Status der Checkboxen beim Anklicken
+    //Diese Funktion wechselt den Status der Checkboxen beim Anklicken
     const handleChange = (id) => {
-        if (probs.ingredients[id].selected) {
-            probs.ingredients[id].selected = false
-            this.forceUpdate()
+        if (props.ingredients[id].selected) {
+            props.ingredients[id].selected = false
         } else {
-            probs.ingredients[id].selected = true
-            this.forceUpdate()
+            props.ingredients[id].selected = true
         }
     };
     
     // zeigt alle Zutaten mit ihrer jewiligen Checkbox an 
     let ingredients = []
-        probs.ingredients.map((ingredient) =>
+        props.ingredients.map((ingredient) =>
         ingredients.push(
             <tr id="ingredientsselectionbody" style={{ backgroundColor: "red" }} >
                 <td >

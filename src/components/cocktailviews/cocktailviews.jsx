@@ -1,6 +1,4 @@
 import React from "react";
-import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom';
 import { ListItem, ListItemText, ListItemAvatar, Avatar } from '@material-ui/core/'
 
 //importieren css.file

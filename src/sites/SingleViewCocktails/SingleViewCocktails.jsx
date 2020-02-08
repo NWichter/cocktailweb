@@ -5,13 +5,17 @@ class SingleViewCocktails extends React.Component {
 
     constructor(probs) {
         super(probs)
-        this.state = probs
+        this.state = 
+        {
+            cocktails: probs.cocktails,
+            choosencocktail: probs.choosencocktail
+        }
     }
     render() {
 
         return (
             <div>
-                {cocktail(this.state.cocktail)}
+                {cocktail(this.state)}
             </div>
         );
     }

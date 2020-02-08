@@ -7,8 +7,8 @@ class App extends React.Component {
   //Hier werden alle möglichen Cocktailrezepte und verwendbaren Zutaten in zwei Liste angelegt
   //Variabeln für "alle Cocktails anzeigen", "ausgewählt Cocktails" und "aktueller Cocktail"
   
-      constructor(probs) {
-        super(probs)
+      constructor(props) {
+        super(props)
         this.state = { 
           cocktails:
             [
@@ -29,7 +29,6 @@ class App extends React.Component {
           allcocktails: {
             "status": false
           },
-          selectedIngredients:[],
           choosencocktail:0,
       }
     }

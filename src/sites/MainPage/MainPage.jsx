@@ -2,17 +2,19 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import { Checkbox } from '@material-ui/core';
 import { ingredientsselection } from '../../components/IngredientsSelection/IngredientsSelection';
+import { Switch, Link, Route } from 'react-router-dom';
 
+import FilterCocktail from '../../sites/FilterCocktail/FilterCocktail'
 // Importieren der css-file
 import './MainPage.css';
 
 class MainPage extends React.Component {
-    constructor(probs) {
-        super(probs)
+    constructor(props) {
+        super(props)
         this.state = {
-            ingredients: probs.ingredients,
-            cocktails: probs.cocktails,
-            allcocktails: probs.allcocktails
+            ingredients: props.ingredients,
+            cocktails: props.cocktails,
+            allcocktails: props.allcocktails
 
         }
     }
@@ -44,14 +46,20 @@ class MainPage extends React.Component {
                 </p>
 
 
+                <Link to="/cocktailfiltern">
                 <Button id="cocktailsfiltern"
-                    style={{backgroundColor:"red"}}
-                    // onClick= {} 
-                    >
+                    style={{backgroundColor:"red"}}>
                     Cocktails filtern
                 </Button>
+                </Link>
+
+
+            <Switch>
+                <Route path="/cocktailfiltern" render={() => <FilterCocktail {...this.state} />} />
+            </Switch>
 
             </div>
+
         );
     }
 }
