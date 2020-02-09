@@ -1,22 +1,22 @@
-import React from "react";
+import React,{useState} from "react";
 import Button from '@material-ui/core/Button';
 
 //Funktion um den nächsten Cocktail aufzurufen
 
+export function Cocktail(props) {
+    const [state,setState] = useState(props);
+    let nextcocktail = (state) => {
 
-export function cocktail(props) {
-    
-    let nextcocktail = (props) => {
-
-    if (props.choosencocktail >= (props.cocktails.length - 1)) {
-        props.choosencocktail = 0
+    if (state.choosencocktail >= (state.cocktails.length - 1)) {
+        state.choosencocktail = 0
     } else {
-        props.choosencocktail += 1
+        state.choosencocktail += 1
     }
-    cocktail(props)
+    Cocktail(state)
+    setState({update:true})
 }
-    let cocktails = props.cocktails
-    let choosencocktail = props.choosencocktail
+    let cocktails = state.cocktails
+    let choosencocktail = state.choosencocktail
        
     //Zusammenfassen aller Zutaten
     let ingredients = []    
@@ -73,7 +73,7 @@ export function cocktail(props) {
                         <td>    
                                 <Button id="nextcocktail"
                                 style={{ backgroundColor: "red" }}
-                                onClick={()=>{nextcocktail(props)}}>
+                                onClick={()=>{nextcocktail(state)}}>
                                 Nächster Cocktail
                                 </Button>
                         </td>

@@ -5,16 +5,17 @@ class FilterCocktail extends React.Component {
 
     constructor(props) {
         super(props)
+        console.log("Filterlog",props.location)
         this.state = {
-            cocktails: props.cocktails,
-            Ingredients: props.Ingredients,
-            allcocktails: props.allcocktails
-            
+            cocktails: props.location.selected.cocktails,
+            Ingredients: props.location.selected.ingredients,
+            allcocktails: props.location.selected.allcocktails
         }
     }
     
     render() {
-        console.log(this.props)
+        console.log("Filterlog", this.state)
+        
         return (
             <div>
                 {cocktailfilter(this.state)}

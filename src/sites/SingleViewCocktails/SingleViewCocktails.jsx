@@ -1,5 +1,5 @@
 import React from 'react';
-import { cocktail } from "../../components/cocktailviews/cocktail/cocktail.jsx";
+import { Cocktail } from "../../components/cocktailviews/cocktail/cocktail.jsx";
 
 class SingleViewCocktails extends React.Component {
 
@@ -15,7 +15,7 @@ class SingleViewCocktails extends React.Component {
 
         return (
             <div>
-                {cocktail(this.state)}
+                {Cocktail(this.state)}
             </div>
         );
     }

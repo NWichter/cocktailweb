@@ -2,9 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import { Checkbox } from '@material-ui/core';
 import { ingredientsselection } from '../../components/IngredientsSelection/IngredientsSelection';
-import { Switch, Link, Route } from 'react-router-dom';
-
-import FilterCocktail from '../../sites/FilterCocktail/FilterCocktail'
+import { Link } from 'react-router-dom';
 // Importieren der css-file
 import './MainPage.css';
 
@@ -18,11 +16,11 @@ class MainPage extends React.Component {
 
         }
     }
-        //Diese Funktion dreht den Status der allcocktails-Variable um, wenn alle Cocktails angezeigt werden sollen
+        //Diese Funktion wechselt den Status der allcocktails-Variable um, wenn alle Cocktails angezeigt werden sollen
         AllCocktailsChange = () => {
             let status = this.state.allcocktails["status"];
             status = !status;
-            this.setState(status)
+            this.setState({status:status})
         }
     
     render() {
@@ -42,21 +40,17 @@ class MainPage extends React.Component {
                     <Checkbox id="allcocktails"    
                     value="uncontrolled"
                     inputProps={{ 'aria-label': 'uncontrolled-checkbox' }}
-                    onChange={this.AllCocktailsChange} />
+                    onChange={this.AllCocktailsChange}
+                     />
                 </p>
 
-
-                <Link to="/cocktailfiltern">
-                <Button id="cocktailsfiltern"
-                    style={{backgroundColor:"red"}}>
-                    Cocktails filtern
+                <Link to={{ pathname: "/cocktailfiltern", selected: this.state }} >
+                    <Button type="button"
+                        className="filterButton">
+                        Cocktails filtern
                 </Button>
                 </Link>
 
-
-            <Switch>
-                <Route path="/cocktailfiltern" render={() => <FilterCocktail {...this.state} />} />
-            </Switch>
 
             </div>
 

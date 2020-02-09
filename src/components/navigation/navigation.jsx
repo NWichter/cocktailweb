@@ -6,12 +6,13 @@ import { Switch, Link, Route, Redirect } from 'react-router-dom';
 import MainPage from "../../sites/MainPage/MainPage.jsx";
 import OverviewCocktails from "../../sites/OverviewCocktails/OverviewCocktails.jsx";
 import SingleViewCocktails from "../../sites/SingleViewCocktails/SingleViewCocktails.jsx";
+import FilterCocktail from '../../sites/FilterCocktail/FilterCocktail'
 
 // Importieren der css-file
 import './navigation.css';
 
 export function navigation(props) {
-
+        
     // Anlegen der Navigationsleiste
     return (
         <div id="NavigationArea">
@@ -45,19 +46,21 @@ export function navigation(props) {
                 </Link>
             </nav>
 
-            {/* Pfadzuweisung der verschiedenen Cocktails und übergeben von props*/}
+            {/* Pfadzuweisung der verschiedenen Cocktails und übergeben der Variabeln*/}
 
             <Switch>
 
                 <Route path="/" exact >
                     <Redirect to="/home" />
-                    </Route> 
+                </Route> 
 
                 <Route path="/home" render={() => <MainPage {...props} />} />
 
                 <Route path="/uebersichtcocktails" render={() => <OverviewCocktails {...props} />} />
 
                 <Route path="/cocktail" render={() => <SingleViewCocktails {...props} />} />
+
+                <Route path="/cocktailfiltern" component = {FilterCocktail} />
 
             </Switch>
         </div>

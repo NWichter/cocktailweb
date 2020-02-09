@@ -30,7 +30,7 @@ export function ingredientsselection(props) {
                     <Checkbox id={ingredient.name}
                         value="unchecked"
                         inputProps={{ 'aria-label': 'uncontrolled-checkbox' }}
-                        onChange={handleChange[ingredient.id]}
+                        onChange= {() => {handleChange(ingredient.id)}}
                     />
                 </td>
             </tr>

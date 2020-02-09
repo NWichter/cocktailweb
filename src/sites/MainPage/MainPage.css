@@ -1,9 +1,12 @@
 #MainPageHeader {
     padding: 15px;
-    width: 400px; 
+    width: 500px;
+    margin: center; 
+
 }
 
 #HeaderMP {
     padding: 15px;
     color: "lightgrey";
+    border-radius:25px;
 }

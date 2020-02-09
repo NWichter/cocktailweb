@@ -1,30 +1,40 @@
 import React from "react";
 import { ListItem, ListItemText, ListItemAvatar, Avatar } from '@material-ui/core/'
 
-export function cocktailfilter(props) {
 
+export function cocktailfilter(props) {
+    console.log("props",props)
     let cocktails = props.cocktails
     let Ingredients = props.Ingredients
-    let allcocktails = props.allcocktail
+    let allcocktails = props.allcocktails
+    console.log(Ingredients)
+    let selectedIngredientsTrue = Ingredients.filter((element) => element.selected===true);
+    let selectedIngredients = []
+    selectedIngredientsTrue.forEach(element => {
+        selectedIngredients.push(element.name)
+    })
 
-    let selectedIngredients = Ingredients.filter((element) => element.selected===true);
     let content = []
     let filteredcocktails = []
 
     //Überprüfen welche Zutaten zwischen den Ausgewählten und dem Cocktail übereinstimmen
     let matchIngridents = (cocktail,selectedIngredients)=>{
-    let matchedIngridients = 0;
-    cocktail.ingridients.forEach(element => {
+    let matchedIngredients = 0;
+    console.log("selected",selectedIngredients)
+    console.log(cocktail.ingredients)
+    cocktail.ingredients.forEach(element => {
         
         if (selectedIngredients.indexOf(element) !== -1) {
-            matchedIngridients += 1
+            matchedIngredients = matchedIngredients + 1
         }
         
     })
-    let matchingrate = matchedIngridients/cocktail.length()
+    console.log(matchedIngredients, cocktail.ingredients.length)
+    let matchingrate = Math.round(matchedIngredients/cocktail.ingredients.length*100)/100
     return matchingrate
 }
     //Abfrage ob die Zutaten übereinstimmen oder alle Cocktails angezeigt werden sollen
+    console.log("allcocktails",allcocktails)
     if (allcocktails===true){
         filteredcocktails = cocktails
     }else{
@@ -35,6 +45,11 @@ export function cocktailfilter(props) {
         })
     }
     
+    let message = "Folgende Cocktails wurden herausgefiltert:"
+    if (filteredcocktails.length === 0){
+        message = "Es konnten keine passenden Cocktails gefunden werden"
+    }
+
     // Ausgabe aller gefilterter Cocktails mit Bild und Name 
     Object.values(filteredcocktails).forEach(element => {
         let image = require('../../images/' + element.img + '.jpg');
@@ -58,7 +73,7 @@ export function cocktailfilter(props) {
 
         <div>
             <h2>
-                Folgende Cocktails wurden herausgefiltert:
+                {message}
             </h2>
             <table>
                 <tbody>
