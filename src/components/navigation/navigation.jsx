@@ -24,7 +24,7 @@ export function navigation(props) {
             </h1>
             <nav> 
                 <Link to="/home">
-                    <Button  id="ingredientsselection" style={{ backgroundColor: "lightblue" }} variant="contained" size="large" >
+                    <Button  id="ingredientsselection" style={{ backgroundColor: "lightblue"}} variant="contained" size="large" >
                         Hauptseite
                     </Button>
                 </Link>

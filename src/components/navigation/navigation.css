@@ -1,7 +1,11 @@
 #NavigationArea {
+    margin: center; 
+    text-align: center;
     padding-left: 10px;
 }
 
 #HeaderN {
     background-color: "lightblue";
+    margin: center; 
+    text-align: center;
 }

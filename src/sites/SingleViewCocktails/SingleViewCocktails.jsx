@@ -1,14 +1,14 @@
 import React from 'react';
-import { Cocktail } from "../../components/cocktailviews/cocktail/cocktail.jsx";
+import Cocktail  from "../../components/cocktailviews/cocktail/cocktail.jsx";
 
 class SingleViewCocktails extends React.Component {
 
-    constructor(probs) {
-        super(probs)
+    constructor(props) {
+        super(props)
         this.state = 
         {
-            cocktails: probs.cocktails,
-            choosencocktail: probs.choosencocktail
+            cocktails: props.cocktails,
+            choosencocktail: props.choosencocktail
         }
     }
     render() {

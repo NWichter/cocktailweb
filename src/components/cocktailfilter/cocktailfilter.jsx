@@ -1,6 +1,9 @@
 import React from "react";
 import { ListItem, ListItemText, ListItemAvatar, Avatar } from '@material-ui/core/'
+import { Link } from 'react-router-dom';
 
+// Importieren der css-file
+import './cocktailfilter.css';
 
 export function cocktailfilter(props) {
     console.log("props",props)
@@ -30,7 +33,7 @@ export function cocktailfilter(props) {
         
     })
     console.log(matchedIngredients, cocktail.ingredients.length)
-    let matchingrate = Math.round(matchedIngredients/cocktail.ingredients.length*100)/100
+    let matchingrate = Math.round(matchedIngredients/cocktail.ingredients.length*100)
     return matchingrate
 }
     //Abfrage ob die Zutaten übereinstimmen oder alle Cocktails angezeigt werden sollen
@@ -40,7 +43,7 @@ export function cocktailfilter(props) {
     }else{
         Object.values(cocktails).forEach(element => {
 
-        if (matchIngridents(element, selectedIngredients) !== 0){
+        if (matchIngridents(element, selectedIngredients) == 100){
         filteredcocktails.push(element)}
         })
     }
@@ -57,21 +60,24 @@ export function cocktailfilter(props) {
         let matchingrate = matchIngridents(element,selectedIngredients)
 
         content.push(
-            <table>
-                <ListItem //button alignItems="flex-start" component={Link} to={'/cocktail'} onClick={() => { props.aktiv(element.id) }}
-                >
+            <table >
+                <Link to={{ pathname: "/cocktail", selected:element.id }} >
+                <ListItem button alignItems="flex-start">
                     <ListItemAvatar>
                         <Avatar alt="Image" src={image}></Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary={cocktailname} secondary={matchingrate} />
+                    <ListItemText primary={cocktailname} secondary={matchingrate+"% Übereinstimmung mit deinen Zutaten"} />
                 </ListItem>
+                </Link>
+
+
             </table>
         )
     });
 
     return (
 
-        <div>
+        <div id="filterdiv">
             <h2>
                 {message}
             </h2>

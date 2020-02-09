@@ -1,12 +1,30 @@
 #MainPageHeader {
     padding: 15px;
-    width: 500px;
-    margin: center; 
-
+    width: 650px;
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center;
 }
 
 #HeaderMP {
     padding: 15px;
-    color: "lightgrey";
+    color: "white";
     border-radius:25px;
+    text-align: center;
+}
+#allcocktailschechbox{
+    background-color:orange;
+    width:350px;
+    border-radius: 25px;
+    margin-left: auto; 
+    margin-right: auto;
+}
+#filterbutton {
+    background-color:red;
+    text-underline-offset: none;
+}
+#SelectionFrame {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; 
 }

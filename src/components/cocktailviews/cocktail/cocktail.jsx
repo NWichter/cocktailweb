@@ -1,10 +1,12 @@
-import React,{useState} from "react";
+import React from "react";
+import {useState} from "react";
 import Button from '@material-ui/core/Button';
 
 //Funktion um den nächsten Cocktail aufzurufen
 
-export function Cocktail(props) {
-    const [state,setState] = useState(props);
+export default function Cocktail(props) {
+
+    let [state,setState] = useState(props);
     let nextcocktail = (state) => {
 
     if (state.choosencocktail >= (state.cocktails.length - 1)) {

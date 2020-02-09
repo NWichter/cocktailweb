@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import { Checkbox } from '@material-ui/core';
 import { ingredientsselection } from '../../components/IngredientsSelection/IngredientsSelection';
 import { Link } from 'react-router-dom';
+
 // Importieren der css-file
 import './MainPage.css';
 
@@ -15,12 +16,20 @@ class MainPage extends React.Component {
             allcocktails: props.allcocktails
 
         }
+        //Zurücksetzten aller ausgewählten Zutaten
+        this.state.ingredients.forEach(element => {
+            element["selected"] = false
+        })
     }
+        
         //Diese Funktion wechselt den Status der allcocktails-Variable um, wenn alle Cocktails angezeigt werden sollen
         AllCocktailsChange = () => {
-            let status = this.state.allcocktails["status"];
+            let status = this.state.allcocktails;
             status = !status;
-            this.setState({status:status})
+            console.log("Status gewechselt")
+            console.log("Status",status)
+            this.setState({allcocktails:status})
+            console.log("State",this.state)
         }
     
     render() {
@@ -32,10 +41,11 @@ class MainPage extends React.Component {
                     style={{ backgroundColor: "lightgrey" }}>
                     Welche Zutaten sind vorhanden:
                 </h1>
+                <div id="SelectionFrame">
+                   {ingredientsselection(this.state)} 
+                </div>
 
-                {ingredientsselection(this.state)}
-
-                <p > 
+                <p id="allcocktailschechbox"> 
                     Cocktails ohne passende Zutaten anzeigen
                     <Checkbox id="allcocktails"    
                     value="uncontrolled"
@@ -45,7 +55,7 @@ class MainPage extends React.Component {
                 </p>
 
                 <Link to={{ pathname: "/cocktailfiltern", selected: this.state }} >
-                    <Button type="button"
+                    <Button id="filterbutton" type="button"
                         className="filterButton">
                         Cocktails filtern
                 </Button>

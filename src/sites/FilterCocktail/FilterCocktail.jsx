@@ -1,6 +1,9 @@
 import React from 'react';
 import { cocktailfilter } from "../../components/cocktailfilter/cocktailfilter.jsx"
 
+// Importieren der css-file
+import './FilterCocktail.css';
+
 class FilterCocktail extends React.Component {
 
     constructor(props) {
@@ -17,7 +20,7 @@ class FilterCocktail extends React.Component {
         console.log("Filterlog", this.state)
         
         return (
-            <div>
+            <div id="FilterCocktail" styles={{margin:"center"}}>
                 {cocktailfilter(this.state)}
             </div>
         );

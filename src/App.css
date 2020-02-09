@@ -5,6 +5,9 @@
 body {
   background: url("./images/background.jpg") top center fixed;
   background-size: cover;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 html {

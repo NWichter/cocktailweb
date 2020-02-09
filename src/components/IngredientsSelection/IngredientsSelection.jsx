@@ -19,7 +19,7 @@ export function ingredientsselection(props) {
     let ingredients = []
         props.ingredients.map((ingredient) =>
         ingredients.push(
-            <tr id="ingredientsselectionbody" style={{ backgroundColor: "red" }} >
+            <tr >
                 <td >
                     <h3>
                         {ingredient.name}    
@@ -37,7 +37,7 @@ export function ingredientsselection(props) {
         )
     )
     return (
-        <div>
+        <div id="ingredientsselectionbody">
             <table>
                 <tbody>
                     {ingredients}

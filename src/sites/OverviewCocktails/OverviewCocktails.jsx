@@ -1,6 +1,9 @@
 import React from 'react';
 import { cocktailviews } from "../../components/cocktailviews/cocktailviews.jsx"
 
+// Importieren der css-file
+import './OverviewCocktails.css';
+
 class OverviewCocktails extends React.Component {
 
     constructor(props) {
@@ -13,7 +16,7 @@ class OverviewCocktails extends React.Component {
     render() {
 
         return (
-            <div>
+            <div id="overviewframe">
                 {cocktailviews(this.state.cocktails)}
             </div>
         );

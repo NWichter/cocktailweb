@@ -26,9 +26,7 @@ class App extends React.Component {
             {id:5, name: "Minearalwasser", selected: false },
             {id:6, name: "Minzblätter", selected: false },
           ],
-          allcocktails: {
-            "status": false
-          },
+          allcocktails: false,
           choosencocktail:0,
       }
     }
