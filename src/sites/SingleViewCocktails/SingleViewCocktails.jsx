@@ -1,10 +1,14 @@
 import React from 'react';
 import Cocktail  from "../../components/cocktailviews/cocktail/cocktail.jsx";
 
+// Importieren der css-file
+import './SingleViewCocktails.css';
+
 class SingleViewCocktails extends React.Component {
 
     constructor(props) {
         super(props)
+        console.log("id", props.location)
         this.state = 
         {
             cocktails: props.cocktails,
@@ -14,7 +18,7 @@ class SingleViewCocktails extends React.Component {
     render() {
 
         return (
-            <div>
+            <div id="SingleViewFrame">
                 {Cocktail(this.state)}
             </div>
         );

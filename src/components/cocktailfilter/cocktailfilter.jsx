@@ -43,7 +43,7 @@ export function cocktailfilter(props) {
     }else{
         Object.values(cocktails).forEach(element => {
 
-        if (matchIngridents(element, selectedIngredients) == 100){
+        if (matchIngridents(element, selectedIngredients) === 100){
         filteredcocktails.push(element)}
         })
     }

@@ -1,0 +1,10 @@
+#SingleViewFrame{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    width:250px;
+    border-radius:20px;
+    padding-right: 10px;
+    padding-left: 10px
+}

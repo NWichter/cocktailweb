@@ -12,9 +12,10 @@ class App extends React.Component {
         this.state = { 
           cocktails:
             [
-              {id:0, name: "Cuba Libre", ingredients: ["Rum", "Cola"], recipe: ["Rum rein", "Cola rein"], img: "cubalibre" },
-              {id:1, name: "Caipirinha", ingredients: ["Rum", "Rohrzucker", "Limette"], recipe: ["Rum rein", "3 gehäufte TL Rohrzucker", "Limette vierteln und hinzufügen"], img: "caipirinha" },
-              {id:2, name: "Mojito", ingredients: ["Rum", "Limettensaft", "Minearalwasser", "Minzblätter"], recipe: ["Rum rein", "2cl Limettensaft", "paar Minzblätter hinzufügen"], img: "mojito"}
+              {id:0, name: "Cuba Libre", ingredients: ["Rum", "Cola","Limette"], recipe: ["Rum rein", "Cola rein","Limette würfeln"], img: "cubalibre" },
+              {id:1, name: "Caipirinha", ingredients: ["Rum", "Rohrzucker", "Limette"], recipe: ["Rum rein", "3 gehäufte TL Rohrzucker", "Limette würfeln"], img: "caipirinha" },
+              {id:2, name: "Mojito", ingredients: ["Rum", "Limettensaft", "Minearalwasser", "Minzblätter"], recipe: ["Rum rein", "2cl Limettensaft", "paar Minzblätter hinzufügen"], img: "mojito"},
+              {id:3, name: "", ingredients: [], recipe: [], img: ""},
 
             ],
           ingredients: [

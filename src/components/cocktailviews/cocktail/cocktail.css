@@ -1,0 +1,36 @@
+#Cocktailnameframe{
+    text-align: center;
+    padding-left: 10px;
+    margin-left: auto;
+    margin-right:auto; 
+    width: 200px;
+    background-color: white;
+    border-radius: 20px;
+}
+#Zutatenframe{
+    text-align: center;
+    padding-left: 10px;
+    margin-left: auto;
+    margin-right:auto; 
+    width: 200px;
+    background-color: white;
+    border-radius: 20px;
+}
+#Zubereitungsframe{
+    text-align: center;
+    padding-left: 10px;
+    margin-left: auto;
+    margin-right:auto; 
+    width: 200px;
+    background-color: white;
+    border-radius: 20px;
+}
+#tbody {
+    text-align: center;
+    padding-left: 10px;
+    margin-left: auto;
+    margin-right:auto; 
+    width: 200px;
+    background-color: white;
+    border-radius: 20px; 
+}

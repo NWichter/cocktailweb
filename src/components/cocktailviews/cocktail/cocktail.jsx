@@ -2,36 +2,43 @@ import React from "react";
 import {useState} from "react";
 import Button from '@material-ui/core/Button';
 
-//Funktion um den nächsten Cocktail aufzurufen
+
 
 export default function Cocktail(props) {
+    console.log(props.location)
 
-    let [state,setState] = useState(props);
-    let nextcocktail = (state) => {
+    //let [test,setTest] = useState(props);
 
-    if (state.choosencocktail >= (state.cocktails.length - 1)) {
-        state.choosencocktail = 0
+    let cocktails = props.cocktails
+    let choosencocktail = props.choosencocktail
+    console.log("cocktails",cocktails)
+    console.log("ccccocktails", choosencocktail)
+
+    //Funktion um den nächsten Cocktail aufzurufen
+    let nextcocktail = (props) => {
+
+    if (props.choosencocktail >= (props.cocktails.length - 1)) {
+        props.choosencocktail = 0
     } else {
-        state.choosencocktail += 1
+        props.choosencocktail += 1
     }
-    Cocktail(state)
-    setState({update:true})
+        Cocktail(props)
+    //setTest({update:true})
 }
-    let cocktails = state.cocktails
-    let choosencocktail = state.choosencocktail
-       
+      
     //Zusammenfassen aller Zutaten
     let ingredients = []    
     cocktails[choosencocktail].ingredients.map((element) =>
         ingredients.push(
-            <tr>
+            <tr id="Zutatenframe">
                 <td>
                     {element}
                 </td>
             </tr>
         )
     )
-    
+
+    //Zusammenfassen aller Zubereitungsschritte
     let recipe = []
     cocktails[choosencocktail].recipe.map((element) =>
         recipe.push(
@@ -45,18 +52,18 @@ export default function Cocktail(props) {
 
     return (
         <div>
-            <table>
-                <tbody>
-                    <tr>
-                        <td>
+            <table >
+                <tbody >
+                    <tr >
+                        <td id="Cocktailnameframe">
                             <h2>
                                Cocktailname: 
                             </h2>
                             {cocktails[choosencocktail].name}
                         </td>
                     </tr>
-                    <tr>
-                        <td>
+                    <tr style={{ textAlign: "center" }}>
+                        <td >
                             <h2>
                                Zutaten: 
                             </h2>
@@ -75,7 +82,7 @@ export default function Cocktail(props) {
                         <td>    
                                 <Button id="nextcocktail"
                                 style={{ backgroundColor: "red" }}
-                                onClick={()=>{nextcocktail(state)}}>
+                                onClick={() => { nextcocktail(props)}}>
                                 Nächster Cocktail
                                 </Button>
                         </td>
