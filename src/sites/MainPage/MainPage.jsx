@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 // Importieren der css-file
 import './MainPage.css';
 
+//Hauptseite
 class MainPage extends React.Component {
     constructor(props) {
         super(props)
@@ -26,10 +27,10 @@ class MainPage extends React.Component {
         AllCocktailsChange = () => {
             let status = this.state.allcocktails;
             status = !status;
-            console.log("Status gewechselt")
-            console.log("Status",status)
+            //console.log("Status gewechselt")
+            //console.log("Status",status)
             this.setState({allcocktails:status})
-            console.log("State",this.state)
+
         }
     
     render() {

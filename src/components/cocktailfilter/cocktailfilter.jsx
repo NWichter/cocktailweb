@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 import './cocktailfilter.css';
 
 export function cocktailfilter(props) {
-    console.log("props",props)
+    //console.log("props",props)
     let cocktails = props.cocktails
     let Ingredients = props.Ingredients
     let allcocktails = props.allcocktails
-    console.log(Ingredients)
+    //console.log(Ingredients)
     let selectedIngredientsTrue = Ingredients.filter((element) => element.selected===true);
     let selectedIngredients = []
     selectedIngredientsTrue.forEach(element => {
@@ -23,8 +23,8 @@ export function cocktailfilter(props) {
     //Überprüfen welche Zutaten zwischen den Ausgewählten und dem Cocktail übereinstimmen
     let matchIngridents = (cocktail,selectedIngredients)=>{
     let matchedIngredients = 0;
-    console.log("selected",selectedIngredients)
-    console.log(cocktail.ingredients)
+    //console.log("selected",selectedIngredients)
+    //console.log(cocktail.ingredients)
     cocktail.ingredients.forEach(element => {
         
         if (selectedIngredients.indexOf(element) !== -1) {
@@ -32,12 +32,12 @@ export function cocktailfilter(props) {
         }
         
     })
-    console.log(matchedIngredients, cocktail.ingredients.length)
+    //console.log(matchedIngredients, cocktail.ingredients.length)
     let matchingrate = Math.round(matchedIngredients/cocktail.ingredients.length*100)
     return matchingrate
 }
     //Abfrage ob die Zutaten übereinstimmen oder alle Cocktails angezeigt werden sollen
-    console.log("allcocktails",allcocktails)
+    //console.log("allcocktails",allcocktails)
     if (allcocktails===true){
         filteredcocktails = cocktails
     }else{

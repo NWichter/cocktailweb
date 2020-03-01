@@ -4,11 +4,12 @@ import { cocktailfilter } from "../../components/cocktailfilter/cocktailfilter.j
 // Importieren der css-file
 import './FilterCocktail.css';
 
+//Seite mit den gefilterten Cocktails
 class FilterCocktail extends React.Component {
 
     constructor(props) {
         super(props)
-        console.log("Filterlog",props.location)
+        //console.log("Filterlog",props.location)
         this.state = {
             cocktails: props.location.selected.cocktails,
             Ingredients: props.location.selected.ingredients,
@@ -17,7 +18,7 @@ class FilterCocktail extends React.Component {
     }
     
     render() {
-        console.log("Filterlog", this.state)
+        //console.log("Filterlog", this.state)
         
         return (
             <div id="FilterCocktail" styles={{margin:"center"}}>

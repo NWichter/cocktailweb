@@ -4,6 +4,7 @@ import { Checkbox } from '@material-ui/core';
 import './IngredientsSelection.css';
 //import { Redirect } from 'react-router-dom';
 
+//Auswahl der Zutaten
 export function ingredientsselection(props) {
 
     //Diese Funktion wechselt den Status der Checkboxen beim Anklicken

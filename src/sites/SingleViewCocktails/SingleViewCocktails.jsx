@@ -4,11 +4,12 @@ import Cocktail  from "../../components/cocktailviews/cocktail/cocktail.jsx";
 // Importieren der css-file
 import './SingleViewCocktails.css';
 
+//Einzelübersicht
 class SingleViewCocktails extends React.Component {
 
     constructor(props) {
         super(props)
-        console.log("id", props.location)
+        //console.log("id", props.location.choosencocktail)
         this.state = 
         {
             cocktails: props.cocktails,

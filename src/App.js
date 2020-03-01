@@ -5,7 +5,7 @@ import './App.css';
 
 class App extends React.Component {
   //Hier werden alle möglichen Cocktailrezepte und verwendbaren Zutaten in zwei Liste angelegt
-  //Variabeln für "alle Cocktails anzeigen", "ausgewählt Cocktails" und "aktueller Cocktail"
+  //Variabeln für "alle Cocktails anzeigen" und "aktueller Cocktail"
   
       constructor(props) {
         super(props)

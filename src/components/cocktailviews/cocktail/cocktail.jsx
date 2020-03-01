@@ -1,18 +1,21 @@
 import React from "react";
-import {useState} from "react";
+//import {useState} from "react";
 import Button from '@material-ui/core/Button';
 
 
+//importieren css.file
+import './cocktail.css'
 
+//ermöglicht die Einzelansicht eines Cocktails
 export default function Cocktail(props) {
     console.log(props.location)
 
-    //let [test,setTest] = useState(props);
+    //let [state,setState] = useState(props);
 
     let cocktails = props.cocktails
     let choosencocktail = props.choosencocktail
-    console.log("cocktails",cocktails)
-    console.log("ccccocktails", choosencocktail)
+    //console.log("cocktails",cocktails)
+    //console.log("choosencocktail", choosencocktail)
 
     //Funktion um den nächsten Cocktail aufzurufen
     let nextcocktail = (props) => {
@@ -23,14 +26,15 @@ export default function Cocktail(props) {
         props.choosencocktail += 1
     }
         Cocktail(props)
-    //setTest({update:true})
+    //angedachte Möglichkeit zum aktuallsieren der Seite
+    //setTest({update:true}) 
 }
       
     //Zusammenfassen aller Zutaten
     let ingredients = []    
     cocktails[choosencocktail].ingredients.map((element) =>
         ingredients.push(
-            <tr id="Zutatenframe">
+            <tr >
                 <td>
                     {element}
                 </td>
@@ -63,7 +67,7 @@ export default function Cocktail(props) {
                         </td>
                     </tr>
                     <tr style={{ textAlign: "center" }}>
-                        <td >
+                        <td id="Zutatenframe">
                             <h2>
                                Zutaten: 
                             </h2>
@@ -71,7 +75,7 @@ export default function Cocktail(props) {
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td id id="Zubereitungsframe">
                             <h2>
                                 Zubereitungsschritte:
                             </h2>

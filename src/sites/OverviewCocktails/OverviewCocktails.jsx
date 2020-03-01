@@ -4,6 +4,7 @@ import { cocktailviews } from "../../components/cocktailviews/cocktailviews.jsx"
 // Importieren der css-file
 import './OverviewCocktails.css';
 
+//Übersicht über alle Cocktails
 class OverviewCocktails extends React.Component {
 
     constructor(props) {
